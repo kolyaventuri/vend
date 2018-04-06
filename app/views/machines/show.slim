@@ -1,5 +1,5 @@
 h1 #{@machine.location} Vending Machine
-h3 Average Price: $#{@machine.average_price_formatted}
+h3 Average Price: #{number_to_currency(@machine.average_price)}
 
 ul.snacks
   - @machine.snacks.each do |snack|
