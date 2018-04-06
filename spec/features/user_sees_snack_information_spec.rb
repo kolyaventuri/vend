@@ -27,7 +27,7 @@ feature 'When a user vitis a page for a specific snack' do
   end
 
   scenario 'they should see that snacks information' do
-    visit snack_page(@snacks[0])
+    visit snack_path(@snacks[0])
 
     expect(page).to have_content(@snacks[0].name)
     expect(page).to have_content(@snacks[0].price / 100.0)
