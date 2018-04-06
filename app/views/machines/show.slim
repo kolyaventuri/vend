@@ -1,0 +1,6 @@
+h1 #{@machine.location} Vending Machine
+h3 Average Price: $#{@machine.average_price_formatted}
+
+ul.snacks
+  - @machine.snacks.each do |snack|
+    li #{snack.name} - $#{snack.price / 100.0}
