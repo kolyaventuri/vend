@@ -32,6 +32,7 @@ describe Machine, type: :model do
 
       avg = snacks.reduce(0) { |s, snack| s + snack.price }
       avg /= snacks.length.to_f
+      avg /= 100.0
 
       expect(dons.average_price).to be(avg)
     end

@@ -1,5 +1,5 @@
 h1 #{@machine.location} Vending Machine
-h3 Average Price: #{@machine.average_price}
+h3 Average Price: $#{@machine.average_price_formatted}
 
 ul.snacks
   - @machine.snacks.each do |snack|
