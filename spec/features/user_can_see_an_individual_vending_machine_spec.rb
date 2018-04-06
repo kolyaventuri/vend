@@ -34,7 +34,7 @@ feature 'When a user visits a vending machine show page' do
         expect(page).to have_content(snack.name)
       end
 
-      all('li').each_with_index do |i, item|
+      all('li').each_with_index do |item, i|
         within(item) do
           expect(page).to have_content(snacks[i].name)
           expect(page).to have_content(snacks[i].price / 100.0)
