@@ -1,2 +1,11 @@
 h1= @snack.name
 h2 Price: #{number_to_currency(@snack.price / 100.0)}
+
+ul.locations
+  - @snack.machines.each do |machine|
+    li
+      p
+        |
+          #{machine.location}
+          (#{machine.snacks.length} kinds of snacks,
+          average price of #{number_to_currency(machine.average_price)})

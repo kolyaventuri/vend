@@ -33,8 +33,8 @@ feature 'When a user vitis a page for a specific snack' do
     expect(page).to have_content(@snacks[0].price / 100.0)
 
     within('.locations') do
-      expect(page).to have_content("#{@dons.location} (#{@dons.snacks.length} kinds of snacks, average price of #{number_to_currency(@dons.average_price)})")
-      expect(page).to have_content("#{@dons2.location} (#{@dons2.snacks.length} kinds of snacks, average price of #{number_to_currency(@dons.average_price)})")
+      expect(page).to have_content("#{@dons.location} (#{@dons.snacks.length} kinds of snacks, average price of $#{format('%.2f', @dons.average_price)})")
+      expect(page).to have_content("#{@dons2.location} (#{@dons2.snacks.length} kinds of snacks, average price of $#{format('%.2f', @dons2.average_price)})")
     end
   end
 end
