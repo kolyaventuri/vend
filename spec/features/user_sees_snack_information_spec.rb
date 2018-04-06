@@ -26,11 +26,15 @@ feature 'When a user vitis a page for a specific snack' do
     DatabaseCleaner.clean
   end
 
-  scenario 'they should see that snacks information' do
+  scenario 'they should see that snacks name/price' do
     visit snack_path(@snacks[0])
 
     expect(page).to have_content(@snacks[0].name)
     expect(page).to have_content(@snacks[0].price / 100.0)
+  end
+
+  scenario 'they should see a list of locations with that snack and their basic info' do
+    visit snack_path(@snacks[0])
 
     within('.locations') do
       expect(page).to have_content("#{@dons.location} (#{@dons.snacks.length} kinds of snacks, average price of $#{format('%.2f', @dons.average_price)})")
