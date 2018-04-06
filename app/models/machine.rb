@@ -8,8 +8,4 @@ class Machine < ApplicationRecord
   def average_price
     snacks.average(:price).to_f / 100.0
   end
-
-  def average_price_formatted
-    format('%.2f', average_price)
-  end
 end
